@@ -1,13 +1,18 @@
 {
+  "homepage": "http://nozomuorita.github.io/atcoder-game1",
   "name": "atcoder-game1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
     "dev": "vite",
     "build": "vite build",
+    "rebuild": "vite build && rm -R docs && cp -r dist docs",
+    "git": "git add . && git commit && git push origin main",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "cp index.html 404.html"
   },
   "dependencies": {
     "react": "^18.2.0",
